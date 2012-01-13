@@ -21,6 +21,7 @@ Bundle 'MatchTag'
 Bundle 'ack.vim'
 Bundle 'closetag.vim'
 Bundle 'taglist.vim'
+Bundle 'Zenburn'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 

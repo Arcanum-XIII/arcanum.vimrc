@@ -16,6 +16,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
+Bundle 'Lokaltog/vim-powerline'
 " vim-scripts repos
 Bundle 'MatchTag'
 Bundle 'ack.vim'

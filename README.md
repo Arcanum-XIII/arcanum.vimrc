@@ -1,4 +1,4 @@
-Personnal .vimrc, with vundle configuration
+## Personnal .vimrc, with vundle configuration
 
 Install : 
 - git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle

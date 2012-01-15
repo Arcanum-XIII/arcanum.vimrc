@@ -17,6 +17,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/syntastic'
 " vim-scripts repos
 Bundle 'MatchTag'
 Bundle 'ack.vim'
@@ -42,9 +43,11 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+set viminfo='10,\"100,:20,%,n~/.viminfo
 
 if has('gui_running')
-	set guifont=Menlo:h12
+	"set guifont=Menlo\ for\ Powerline:h12
+    set guifont=Menlo:h12
     set undofile
     set rnu
 end
@@ -79,3 +82,4 @@ nnoremap <leader>b :CommandTFlush<CR>
 nnoremap <leader>f :TagbarToggle <CR>
 nnoremap <leader>s <C-w>v<C-w>l
 nnoremap <leader>n <C-w><C-w>
+nnoremap <leader>h :set hlsearch! hlsearch?<CR>

@@ -18,13 +18,16 @@ Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
+Bundle 'Rip-Rip/clang_complete'
 " vim-scripts repos
 Bundle 'MatchTag'
 Bundle 'ack.vim'
 Bundle 'closetag.vim'
 Bundle 'taglist.vim'
 Bundle 'Zenburn'
+Bundle "slimv.vim"
 " non github repos
+" Don't forget to compile
 Bundle 'git://git.wincent.com/command-t.git'
 
 set nocompatible
@@ -50,6 +53,7 @@ if has('gui_running')
     set guifont=Menlo:h12
     set undofile
     set rnu
+    set guioptions=egmrt
 end
 
 syntax on
@@ -83,3 +87,5 @@ nnoremap <leader>f :TagbarToggle <CR>
 nnoremap <leader>s <C-w>v<C-w>l
 nnoremap <leader>n <C-w><C-w>
 nnoremap <leader>h :set hlsearch! hlsearch?<CR>
+
+let g:slimv_swank_cmd = '!osascript -e "tell application \"Terminal\" to do script \"ccl --load ~/.vim/bundle/slimv.vim/slime/start-swank.lisp\""'

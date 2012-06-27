@@ -2,6 +2,8 @@ filetype on
 filetype off
 filetype plugin indent on
 
+set shell=/bin/bash
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -47,6 +49,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set viminfo='10,\"100,:20,%,n~/.viminfo
+set directory=/tmp
 
 if has('gui_running')
 	"set guifont=Menlo\ for\ Powerline:h12
@@ -84,8 +87,10 @@ ab asbo Author: Sébastien Orban
 nnoremap <leader>c :cd Sites/Knauf-remote/public_html/knauf/sites/all/modules/kimp<CR>
 nnoremap <leader>b :CommandTFlush<CR>
 nnoremap <leader>f :TagbarToggle <CR>
-nnoremap <leader>s <C-w>v<C-w>l
+nnoremap <leader>sh <C-w>v<C-w>l
 nnoremap <leader>n <C-w><C-w>
 nnoremap <leader>h :set hlsearch! hlsearch?<CR>
 
 let g:slimv_swank_cmd = '!osascript -e "tell application \"Terminal\" to do script \"ccl --load ~/.vim/bundle/slimv.vim/slime/start-swank.lisp\""'
+let g:slimv_leader = ';'
+let g:paredit_leader = '='

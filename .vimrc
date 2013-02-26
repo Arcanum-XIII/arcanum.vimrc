@@ -20,7 +20,7 @@ Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
-Bundle 'Rip-Rip/clang_complete'
+Bundle 'Valloric/YouCompleteMe'
 " vim-scripts repos
 Bundle 'MatchTag'
 Bundle 'ack.vim'
@@ -28,6 +28,7 @@ Bundle 'closetag.vim'
 Bundle 'taglist.vim'
 Bundle 'Zenburn'
 Bundle "slimv.vim"
+Bundle "EasyMotion"
 " non github repos
 " Don't forget to compile
 Bundle 'git://git.wincent.com/command-t.git'
@@ -50,6 +51,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set viminfo='10,\"100,:20,%,n~/.viminfo
 set directory=/tmp
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 if has('gui_running')
 	"set guifont=Menlo\ for\ Powerline:h12

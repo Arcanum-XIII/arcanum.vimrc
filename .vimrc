@@ -15,12 +15,19 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-clojure-static'
 Bundle 'Raimondi/delimitMate'
-Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'SirVer/ultisnips'
+Bundle 'sjl/gundo.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'kien/ctrlp.vim'
 " vim-scripts repos
 Bundle 'MatchTag'
 Bundle 'ack.vim'
@@ -28,10 +35,6 @@ Bundle 'closetag.vim'
 Bundle 'taglist.vim'
 Bundle 'Zenburn'
 Bundle "slimv.vim"
-Bundle "EasyMotion"
-" non github repos
-" Don't forget to compile
-Bundle 'git://git.wincent.com/command-t.git'
 
 set nocompatible
 set modelines=0
@@ -50,21 +53,16 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set viminfo='10,\"100,:20,%,n~/.viminfo
-set directory=/tmp
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+set directory=~/.tmp
 
 if has('gui_running')
 	"set guifont=Menlo\ for\ Powerline:h12
     set guifont=Menlo:h12
-    set undofile
-    set rnu
     set guioptions=egmrt
 end
 
 syntax on
 set background=dark
-" colorscheme molokai
-"colorscheme desert
 colorscheme zenburn
 
 au FocusLost * :wa
@@ -72,10 +70,8 @@ au FocusLost * :wa
 nnoremap <C-u>:w<CR> :call TransmitFtpSendFile()<CR>
 let mapleader = ","
 
-if version > 720
-  set undofile
-  set rnu
-endif
+set undofile
+set rnu
 
 set smartindent
 set tabstop=4
@@ -86,12 +82,12 @@ ab sbo Sébastien Orban
 ab asbo Author: Sébastien Orban
 
 " Raccourci perso
-nnoremap <leader>c :cd Sites/Knauf-remote/public_html/knauf/sites/all/modules/kimp<CR>
-nnoremap <leader>b :CommandTFlush<CR>
 nnoremap <leader>f :TagbarToggle <CR>
 nnoremap <leader>sh <C-w>v<C-w>l
 nnoremap <leader>n <C-w><C-w>
 nnoremap <leader>h :set hlsearch! hlsearch?<CR>
+
+nnoremap <F5> :GundoToggle<CR>
 
 let g:slimv_swank_cmd = '!osascript -e "tell application \"Terminal\" to do script \"ccl --load ~/.vim/bundle/slimv.vim/slime/start-swank.lisp\""'
 let g:slimv_leader = ';'

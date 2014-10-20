@@ -20,7 +20,7 @@ Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
 Bundle 'Raimondi/delimitMate'
 Bundle 'majutsushi/tagbar'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
@@ -92,3 +92,8 @@ nnoremap <F5> :GundoToggle<CR>
 let g:slimv_swank_cmd = '!osascript -e "tell application \"Terminal\" to do script \"ccl --load ~/.vim/bundle/slimv.vim/slime/start-swank.lisp\""'
 let g:slimv_leader = ';'
 let g:paredit_leader = '='
+
+
+set rtp+=$GOROOT/misc/vim
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown

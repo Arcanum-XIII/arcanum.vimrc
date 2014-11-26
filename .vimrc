@@ -24,10 +24,9 @@ Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'SirVer/ultisnips'
-Bundle 'sjl/gundo.vim'
+Bundle 'Shougo/neomru.vim'
+Bundle 'Shougo/unite.vim'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'kien/ctrlp.vim'
 " vim-scripts repos
 Bundle 'MatchTag'
 Bundle 'ack.vim'
@@ -97,3 +96,16 @@ let g:paredit_leader = '='
 set rtp+=$GOROOT/misc/vim
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Unite
+let g:unite_source_history_yank_enable = 1
+let g:unite_source_grep_command = 'ack'
+let g:unite_source_grep_default_opts='--no-heading --no-color -a'
+let g:unite_source_grep_recursive_opt=''
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+nnoremap <leader>a :<C-u>Unite grep:.<cr>

@@ -1,7 +1,3 @@
-filetype on
-filetype off
-filetype plugin indent on
-
 set shell=/bin/bash
 
 set rtp+=~/.vim/bundle/vundle/
@@ -26,7 +22,9 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Shougo/neomru.vim'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc.vim'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'wting/rust.vim'
 " vim-scripts repos
 Bundle 'MatchTag'
 Bundle 'ack.vim'
@@ -34,6 +32,10 @@ Bundle 'closetag.vim'
 Bundle 'taglist.vim'
 Bundle 'Zenburn'
 Bundle "slimv.vim"
+
+filetype on
+filetype off
+filetype plugin indent on
 
 set nocompatible
 set modelines=0
